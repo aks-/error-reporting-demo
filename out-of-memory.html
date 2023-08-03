@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>Going out of memory soon....</p>
+  </body>
+  <script>
+    const array = [];
+    function outOfMemory() {
+      setTimeout(() => {
+        array.push(new Array(1000000).join("x"));
+        outOfMemory();
+      }, 0);
+    }
+    outOfMemory();
+  </script>
+</html>
